@@ -30,10 +30,10 @@ body{
     margin:0;
     padding: 0;
     width:100%;
-    background-color: #00334A;
+/*    background-color: #00334A;*/
     color: aliceblue;
     font-family: 'Knewave', cursive;
-    background-image: url(images/ElectricThunderSpread_hero.png);
+    background-image: url(images/flora-bg.jpg);
     background-attachment: fixed;
     
 }
@@ -252,36 +252,83 @@ nav a.active {
 ----------------HERO------------------------
 ------------------------------------------*/
 
+@keyframes bg-color{
+    0%{background-color: purple;}
+    20%{background-color: dodgerblue;}
+    40%{background-color: forestgreen;}
+    60%{background-color: yellow;}
+    80%{background-color: orange;}
+    100%{background-color: red;}
+    
+}
+
 #hero {
     height: 93vh; /* vh is percent of viewport */
     width: 100%;
-    background-image:url(images/ElectricThunderSpread_hero.png);
-    background-image:url(images/herogif_5frames_quicker.gif);
+/*    background-image:url(images/ElectricThunderSpread_hero.png);*/
+/*    background-image:url(images/flora-bg.jpg);*/
     background-size: cover;
     background-position: center center;
+    position: relative;
+    animation-name: bg-color;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
+/*
 #hero .overlay {
     z-index: 1;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+    background-color: purple;
+    opacity: .9;
+}
+*/
+
+.hero-bg {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+/*
+    animation-name: bg-color;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+*/
+    opacity: .4;
+    background-image:url(images/flora-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    mix-blend-mode:difference;
+}
+
+.flora{
+    background: url(vid/flora.mp4);
+    width: 100%;
+    background-size: cover;
+    
 }
 
  .layer-2 {
     z-index: 2;
     height: inherit;
-    background-image:url(images/ElectricThunderSpread_hero_JoewithLightning.png);
+    background-image:url(images/BandSpread1_NoBG.png);
     background-size: cover;
     background-position: center center;
     position: relative;
     bottom: 93vh;
-    mix-blend-mode: overlay;
+    mix-blend-mode: difference;
+/*
     animation-name: glow;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
+*/
 }
 
 /*
@@ -333,7 +380,7 @@ i#down-arrow.fas.fa-angle-double-down:hover {
 
 @keyframes glow {
     from {opacity: 0.9}
-    to {opacity: 0.2}
+    to {opacity: 0.7}
 }
 
 .container {
@@ -672,7 +719,13 @@ a.bit-button.bit-track-button.bit-offers:hover {
 #main-content {
     padding: 20px 0px;
     margin: 0 0;
-    background-color: rgba(0, 51, 74, 0.5)}
+/*
+    animation-name: bg-color;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+*/
+}
 
 /*---------CONTACT SECTION------------------
 -------------------------------------------
