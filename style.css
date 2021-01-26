@@ -14,6 +14,15 @@ audio {
     --bg: #00334A;
     --dark: #00334A;
     --light: #4691B2;
+    --display-1: 'Cinzel Decorative';
+    --display-2: 'Megrim';
+    --display-3: 'Fascinate';
+    --display-4: 'Almendra';
+    --display-5: 'Elsie Swash Caps';
+    --display-6: 'Srisakdi';
+    --p-1: 'Montserrat Alternates';
+    --p-2: 'Poiret One';
+    
 }
 
 
@@ -32,9 +41,14 @@ body{
     width:100%;
 /*    background-color: #00334A;*/
     color: aliceblue;
-    font-family: 'Knewave', cursive;
-    background-image: url(images/flora-bg.jpg);
+    font-family: var(--display-2);
+/*    background-image: url(images/flora-bg.jpg);*/
     background-attachment: fixed;
+    animation-name: bg-color;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     
 }
 
@@ -200,6 +214,12 @@ nav.sticky {
 
 #main-content {
     transition: .2s all;
+    background-image: url(images/flora-bg.jpg);
+    mix-blend-mode: difference;
+}
+
+#main-content div section{
+    mix-blend-mode: normal !important;
 }
 
 
