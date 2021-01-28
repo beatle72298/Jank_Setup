@@ -6,8 +6,8 @@ audio {
 }
 
 :root {
-    --color1: #00334A;
-    --color2: #004666;
+    --color1: rgb(100,0,400);
+    --color2: rgba(100,0,400, .7);
     --color3: #1A607F;
     --color4: #007BB2;
     --color5: #4691B2;
@@ -26,10 +26,6 @@ audio {
 }
 
 
-@font-face {
-    font-family: theZains;
-    src: url(fonts/theZains.ttf);
-}
 
 * {
     box-sizing: border-box;
@@ -42,6 +38,7 @@ body{
 /*    background-color: #00334A;*/
     color: aliceblue;
     font-family: var(--display-2);
+    font-weight: bold;
 /*    background-image: url(images/flora-bg.jpg);*/
     background-attachment: fixed;
     animation-name: bg-color;
@@ -49,16 +46,21 @@ body{
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    
 }
 
+body i{font-weight: normal;}
+
 section h2 {
-    font-size: 32px;
+    font-size: 40px;
     margin-top: 0px;
+/*    animation: text-color 15s alternate-reverse infinite ease-in-out;*/
+    mix-blend-mode: difference;
+    
 }
 
 ol, ul{
     list-style: none;
+    padding-inline-start: 0px;
 }
 
 a {
@@ -80,7 +82,20 @@ i {
 
 .flex-wrap {
     display: flex;
+    flex-flow: wrap;
 }
+
+.main-bg{
+    background-image: url(images/flora-bg.jpg);
+    width: 100%;
+    height: 200vh;
+    background-attachment: fixed;
+    position: absolute;
+    top: 100vh;
+    z-index: -1;
+    mix-blend-mode: difference;
+}
+
 
 /*--------------------------
 ---------HEADER-------------
@@ -142,9 +157,9 @@ header .c3{
 }
 
 .c1 h2 {
-    font-family: theZains;
-    font-size: 28px;
+    font-size: 32px;
     z-index: 204;
+    font-family: var(--display-8);
 }
 
 #subscribe-icon {
@@ -161,9 +176,9 @@ nav ul{
     z-index: 201;
     margin: 0;
     padding: 0;
-    background-color: #00334A;
+    background-color: var(--color1);
     color:aliceblue;
-    font-size: 20px;
+    font-size: 24px;
     width: 100%;
     overflow: hidden;
 }
@@ -214,8 +229,10 @@ nav.sticky {
 
 #main-content {
     transition: .2s all;
+/*
     background-image: url(images/flora-bg.jpg);
     mix-blend-mode: difference;
+*/
 }
 
 #main-content div section{
@@ -226,12 +243,12 @@ nav.sticky {
 .header-shrink {
     z-index: 500;
     transition: linear .3s all;
-    background-color: #00334A;
+    background-color: var(--color1);
     padding: 20px;
 }
 
 .header-shrink .c1 h2{
-    font-size: 22px;
+    font-size: 30px;
     transition: .3s all;
 }
 
@@ -247,7 +264,7 @@ nav.sticky {
 
 .nav-shrink ul{
     padding: 0;
-    
+    font-size: 20px;
 }
 
 .nav-shrink > ul > li > a{
@@ -278,8 +295,16 @@ nav a.active {
     40%{background-color: forestgreen;}
     60%{background-color: yellow;}
     80%{background-color: orange;}
-    100%{background-color: red;}
-    
+    100%{background-color: red;} 
+}
+
+@keyframes text-color{
+    0%{color: purple;}
+    20%{color: dodgerblue;}
+    40%{color: forestgreen;}
+    60%{color: yellow;}
+    80%{color: orange;}
+    100%{color: red;} 
 }
 
 #hero {
@@ -375,7 +400,7 @@ i#down-arrow.fas.fa-angle-double-down {
 .down-arrow i{
     display: block;
     font-size: 56px;
-    color: #00334A;
+    color: var(--color1);
     opacity: .7;
     text-shadow: 1px 5px 2px black;
     transition: 0.3s all;
@@ -404,11 +429,11 @@ i#down-arrow.fas.fa-angle-double-down:hover {
 }
 
 .container {
-    background-color: rgba(0, 70, 102, 0.7);
+    background-color: var(--color2);
     max-width:75%;
     padding: 40px;
     margin: 10vh auto;
-    
+    border-radius: 10px;
 }
 
 .hero-email {
@@ -463,19 +488,53 @@ section h2 {
 /*----------------------------
 --------MUSIC SECTION---------
 ------------------------------*/
+.meta{
+    text-align: center;
+    line-height: 2;
+}
 
-#album-grid {
-    flex-wrap: wrap;
+.album-info{
+    width: 100%;
+    font-size: 28px;
+    text-align: left;
+    margin: : 0;
+}
+
+.meta h2{font-size: 34px; text-decoration: underline; font-family: var(--display-5);}
+
+.links{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.links i{
+    font-size: 48px;
+}
+
+.links a{
+    margin: 20px 20px;
+    text-align: center;
+}
+
+.music-btn{
+    transition: .2s all linear;
+}
+
+.music-btn:hover{
+    transition: .2s all linear;
+    color: goldenrod;
+/*    text-shadow: 1px 1px 5px aliceblue;*/
 }
 
 .album-art {
-    display: inline-flex;
+/*    display: inline-flex;*/
     background-size: cover;
     background-position: center center;
-    height: 300px;
-    width: 300px;
-    margin: 30px;
-    border: ridge 2px gray;
+    height: 400px;
+    width: 400px;
+/*    margin: 30px;*/
+/*    border: ridge 2px gray;*/
+    box-shadow: 3px 4px 10px black;
 }
 
 #Music {
@@ -484,129 +543,43 @@ section h2 {
     width: 100%;
 }
 
-.player {
-    width: 300px;
-    height: 300px;
-    border: 2px black solid;
-    transition: .2s all;
+.slick{
+    
 }
 
-.showPlayerBg {
-    background-color: rgba(20,2,50,0.7);
-    transition: .2s all;   
-}
-
-.songTitle {
-    position: relative;
-    font-size: 28px;
-    margin: 0;
-    top: 5px;
-}
-
-.defaultBar {
-    width: 300px;
-    display: block;
-    background-color: #606060;
-    height: 15px;
-    position: relative;
-    bottom: 88px;
-    right: 3.75px;
-    z-index: 5;
-}
-
-.progressBar {
-    width: 0px;
-    height: 15px;
-    background-color: aliceblue;
-    z-index: 10;
-}
-
-.buttons {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    text-align:center;
-    top: 50px;
-}
-
-.buttons button {
-    background-color: var(--color5);
-    background-color: aliceblue;
-    border-radius: 50%;
-    padding: 12px;
-    margin: 0 15px;
-    transition: .1s all;
-}
-
-.hidden {
-    opacity: 0;
-}
-
-.play {
-    font-size: 28px;
-    transform: scale(2.5);
-}
-
-.play.idlePlay {
-    color: rgba(250,250,250, 1);
-    background-color: rgba(0,0,0,.2);
-    border-color: grey;
-}
-
-/*
-#currentTime, #fullDuration {
-    z-index: 8;
-    position: relative;
-    bottom: 110px;
-}
-*/
-
-.timeDisplay {
-    z-index: 8;
-    position: relative;
-    bottom: 110px;
-}
-
-.play:hover {
-    cursor: pointer;
-    background-color: black;
-    color: aliceblue;
-    transform: scale(2.7);
-    transition: .2s all;
-}
-
-.next:hover, .pre:hover {
-    cursor: pointer;
-    background-color: black;
-    color: aliceblue;
-    transform: scale(1.2);
-    transition: .2s all;
-}
-
-.next {
-    position: relative;
-    left: 15px;
-    top: 50px;
-}
-
-.pre {
-    position: relative;
-    right: 15px;
-    top: 50px;
+.grid{
+    display: grid;
+    grid-template-columns: 10% auto auto 10%;
 }
 
 
-
-#solaris {
-    background-image:url(images/AlbumArt_Solaris.png);
+.album-art {
+    display: inline-flex;
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    width: 400px;
+    margin: 30px;
+/*    border: ridge 2px gray;*/
 }
 
-#blackswan {
-    background-image: url(images/AlbumArt_BlackSwanFallenAngels.png);
+#Music {
+    text-align: center;
+    height: 100%;
+    width: 100%;
 }
 
-#hotelofglass {
-    background-image: url(images/AlbumArt_HotelofGlassBodyAgainstMind.png);
+
+#shy {
+    background-image:url(images/AlbumArt_Shy.jpg);
+}
+
+#canti {
+    background-image: url(images/AlbumArt_CantI.jpg);
+}
+
+#inmotion {
+    background-image: url(images/AlbumArt_InMotion.png);
 }
 
 .card {
@@ -702,8 +675,8 @@ a.bit-button.bit-track-button.bit-offers:hover {
 }
 
 #About p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
+    font-family: var(--p-2);
+    font-size: 24px;
     line-height: 2;
     
 }
@@ -722,6 +695,22 @@ a.bit-button.bit-track-button.bit-offers:hover {
 #About {
     min-height: 500px;
 }
+
+.slick-2 div{
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.img1{background-image: url(images/about-img1.JPG);}
+.img2{background-image: url(images/about-img2.JPG);}
+.img3{background-image: url(images/about-img3.JPG);}
+.img4{background-image: url(images/about-img4.jpg);}
+.img5{background-image: url(images/about-img5.jpg);}
+.img6{background-image: url(images/about-img6.jpg);}
+.img7{background-image: url(images/about-img7.jpg);}
+.img8{background-image: url(images/about-img8.jpg);}
 
 /*----------------------------
 ---------VIDEO SECTION--------
@@ -755,13 +744,15 @@ a.bit-button.bit-track-button.bit-offers:hover {
     text-align: center;
 }
 
+#Contact ul{font-family: var(--p-2); line-height: 2; font-size: 18px;}
+
 .fas.fa-envelope {
     margin-right: 5%;
 }
 
 .email a{
     display: inline-flex;
-    font-size: 20px;
+/*    font-size: 20px;*/
     align-items: center;
     transition: .3s all;
 }
@@ -894,7 +885,7 @@ div.clear {
 
 footer {
     height: 10vh;
-    background-color: #00334A;
+    background-color: var(--color1);
     padding: 20px 0px;
 }
 
@@ -949,6 +940,27 @@ footer span{
 
 /*----------------------------------------
 --------------Media Quieries---------------*/
+@media screen and (max-width: 1400px){
+    .album-art{
+        height: 300px;
+        width: 300px;
+    }
+    .grid{
+        grid-template-columns: unset;
+        display: block;
+    }
+    .album-info span{
+        display: block;
+    }
+    
+    .album-info{
+        text-align: center;
+    }
+    .meta{line-height: 1; }
+    .meta h2{ margin-bottom: 0;}
+}
+
+
 @media screen and (max-width: 700px) {
     body {
         width: 100%;
@@ -1008,6 +1020,7 @@ footer span{
     .email a{
         font-size: 16px;
     }
+    #About p{font-size: 18px;}
 }
 
 @media screen and (max-width: 600px){
@@ -1051,8 +1064,8 @@ footer span{
     #navbar > ul > li a{
         width: 100%;
         height: 100%;
-        padding: 15px;
-        font-size: 80%;
+        padding: 10px;
+        font-size: 18px;
     }
     
     .nav-shrink > ul > li > a{
@@ -1063,7 +1076,7 @@ footer span{
     transition: .3s all;
 }
     .nav-shrink > ul > li{
-    font-size:     
+/*    font-size:  18px;   */
     }
     
     #header-bar {
@@ -1083,6 +1096,10 @@ footer span{
     }
     .email i {
         font-size: 100%;
+    }
+    
+    #Music i{
+        font-size: 36px;
     }
 
 }
