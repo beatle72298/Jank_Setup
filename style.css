@@ -31,6 +31,11 @@ audio {
     box-sizing: border-box;
 }
 
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+
 body{
     margin:0;
     padding: 0;
@@ -40,7 +45,7 @@ body{
     font-family: var(--display-2);
     font-weight: bold;
 /*    background-image: url(images/flora-bg.jpg);*/
-    background-attachment: fixed;
+/*    background-attachment: fixed;*/
     animation-name: bg-color;
     animation-duration: 15s;
     animation-direction: alternate;
@@ -50,11 +55,23 @@ body{
 
 body i{font-weight: normal;}
 
+
+@keyframes text-color{
+    0%{color: gold;}
+    25%{color: greenyellow};
+    50%{color: palegreen;}
+    100%{color: gold;}
+}
+
 section h2 {
-    font-size: 40px;
+    font-size: 48px;
     margin-top: 0px;
+    margin-bottom: 0;
+    font-family: var(--display-5) ;
 /*    animation: text-color 15s alternate-reverse infinite ease-in-out;*/
-    mix-blend-mode: difference;
+/*    mix-blend-mode: difference;*/
+    animation: text-color 10s alternate-reverse infinite ease-in-out;
+    text-shadow: 1px 1px 4px black;
     
 }
 
@@ -85,16 +102,55 @@ i {
     flex-flow: wrap;
 }
 
+.bg-container{
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    display: block;
+    mix-blend-mode: difference;
+}
+
+#main-content{
+    height: 100%;
+    display: inline-block;
+    width: 100%;
+}
+
 .main-bg{
     background-image: url(images/flora-bg.jpg);
     width: 100%;
-    height: 200vh;
+    height: 90%;
     background-attachment: fixed;
-    position: absolute;
-    top: 100vh;
+    top: -5vh;
+    position: relative;
     z-index: -1;
-    mix-blend-mode: difference;
+    transition: .2s linear all;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
+
+.main-bg2{
+    background-image: url(images/stars-bg.jpg);
+    width: 100%;
+    height: 90%;
+    background-attachment: fixed;
+    top: -5vh;
+    position: relative;
+    z-index: -1;
+    transition: .2s linear all;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+/*
+.bgChange{
+    background-image: url(images/stars-bg.jpg);
+    transition: .2s linear all;
+    height: fill;
+    top: 263vh;
+}
+*/
 
 
 /*--------------------------
@@ -181,6 +237,7 @@ nav ul{
     font-size: 24px;
     width: 100%;
     overflow: hidden;
+    display: flex;
 }
 
 nav li {
@@ -202,7 +259,8 @@ nav li a{
 }
 
 nav a:hover{
-    background-color: black;
+    background-color: yellowgreen;
+    color: var(--color1);
     transition: 0.3 all;
 }
 
@@ -218,7 +276,7 @@ nav {
 }
 
 nav.sticky {
-    top: 85px;
+    top: 84px;
     width: 100%;
     transition: .2s linear all;
 }
@@ -239,12 +297,15 @@ nav.sticky {
     mix-blend-mode: normal !important;
 }
 
+/*.header-shrink, .nav-shrink{mix-blend-mode: hard-light;}*/
+
 
 .header-shrink {
     z-index: 500;
     transition: linear .3s all;
     background-color: var(--color1);
     padding: 20px;
+    
 }
 
 .header-shrink .c1 h2{
@@ -281,7 +342,7 @@ nav a.active {
 }
 
 .active {
-    background-color: black;
+    background-color: indigo;
 }
 
 
@@ -298,6 +359,7 @@ nav a.active {
     100%{background-color: red;} 
 }
 
+/*
 @keyframes text-color{
     0%{color: purple;}
     20%{color: dodgerblue;}
@@ -306,6 +368,7 @@ nav a.active {
     80%{color: orange;}
     100%{color: red;} 
 }
+*/
 
 #hero {
     height: 93vh; /* vh is percent of viewport */
@@ -514,6 +577,7 @@ section h2 {
 .links a{
     margin: 20px 20px;
     text-align: center;
+    font-size: 24px;
 }
 
 .music-btn{
@@ -639,15 +703,15 @@ a.bit-button.bit-track-button.bit-offers {
     margin-top: 40px;
     box-shadow: 3px 2px 15px 1px black;
     transition: .3s all;
-    background-color: aliceblue;
+    background-color: gold;
     color: black;
     font-size: 24px;
     letter-spacing: 2px;
     border-radius: 10px;
-    font-family: 'Knewave';
-    width: 150px;
+    font-family: var(--display-2);
     padding: 2px;
     text-transform: none;
+    white-space: nowrap;
     
 }
 
@@ -678,7 +742,7 @@ a.bit-button.bit-track-button.bit-offers:hover {
     font-family: var(--p-2);
     font-size: 24px;
     line-height: 2;
-    
+    padding: 24px 75px;;
 }
 
 .profile-pic {
@@ -696,14 +760,18 @@ a.bit-button.bit-track-button.bit-offers:hover {
     min-height: 500px;
 }
 
+
+
 .slick-2 div{
     height: 500px;
-    width: 100%;
+    width: 80%;
     background-size: cover;
     background-position: center center;
+    text-align: center;
+    margin: auto;
 }
 
-.img1{background-image: url(images/about-img1.JPG);}
+.img1{background-image: url(images/about-img1.JPG);display:inline-block;}
 .img2{background-image: url(images/about-img2.JPG);}
 .img3{background-image: url(images/about-img3.JPG);}
 .img4{background-image: url(images/about-img4.jpg);}
@@ -744,7 +812,7 @@ a.bit-button.bit-track-button.bit-offers:hover {
     text-align: center;
 }
 
-#Contact ul{font-family: var(--p-2); line-height: 2; font-size: 18px;}
+#Contact ul{font-family: var(--p-2); line-height: 2; font-size: 24px;}
 
 .fas.fa-envelope {
     margin-right: 5%;
@@ -904,22 +972,26 @@ footer span{
     width: 100%;
     height: 100%;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .loader {
     z-index: 100000;
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #1A607F;
+    border: 16px solid lightgrey;
+    border-top: 16px solid gold;
     border-radius: 50%;
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
-    position: fixed;
+/*    position: fixed;*/
     text-align: center;
-    top: 40%;
-    left: 47%;
+/*    top: 40%;*/
+/*    left: 47%;*/
     background-color: black;
-    box-shadow: 5px 5px 30px #4691B2;
+/*    box-shadow: 1px 1px 10px aliceblue;*/
 }
 
 @keyframes spin {
@@ -928,13 +1000,17 @@ footer span{
 }
 
 .loader-caption {
-    font-family: 'theZains';
+    font-family: var(--display-2);
     text-align: center;
     font-size: 42px;
+    display: block;
+    color: gold;
+/*
     position: fixed;
     top: 25%;
     left: 46%;
-    text-shadow: 5px 5px 30px #4691B2;
+*/
+/*    text-shadow: 1px 1px 30px #4691B2;*/
 }
 
 
@@ -944,6 +1020,7 @@ footer span{
     .album-art{
         height: 300px;
         width: 300px;
+        margin-top: 0;
     }
     .grid{
         grid-template-columns: unset;
@@ -959,7 +1036,23 @@ footer span{
     .meta{line-height: 1; }
     .meta h2{ margin-bottom: 0;}
 }
+@media screen and (max-width: 1280px){
+    #About p{font-size: 18px;}
+}
 
+
+
+
+@media screen and (max-width: 900px){
+    nav ul{font-size: 20px;}
+    nav ul li a{padding: 20px;}
+    .container{max-width: 100%;}
+    .album-art{height: 250px;width:250px;}
+    .slick-2 div{height: 350px; width: 90%;}
+}
+@media screen and (max-width: 800px){
+    nav ul{font-size: 18px;}
+}
 
 @media screen and (max-width: 700px) {
     body {
@@ -1017,10 +1110,12 @@ footer span{
         width: 100%;
         margin: 0;
     }
+/*
     .email a{
         font-size: 16px;
     }
-    #About p{font-size: 18px;}
+*/
+    #About p{font-size: 18px;padding: 20px 0px;}
 }
 
 @media screen and (max-width: 600px){
@@ -1046,11 +1141,11 @@ footer span{
     }
     
     .header-shrink .c1 h2{
-    font-size: 16px;
+    font-size: 18px;
     }
 
     .c1 h2 {
-       margin-left: 10%; 
+/*       margin-left: 10%; */
     }
     
     .header-shrink .c3 h2{
@@ -1064,8 +1159,8 @@ footer span{
     #navbar > ul > li a{
         width: 100%;
         height: 100%;
-        padding: 10px;
-        font-size: 18px;
+/*        padding: 20px 12px;*/
+        font-size: 16px;
     }
     
     .nav-shrink > ul > li > a{
@@ -1092,7 +1187,8 @@ footer span{
     }
     
     #social-bar {
-        margin-right: 10%;
+/*        margin-right: 10%;*/
+        justify-content: flex-start;
     }
     .email i {
         font-size: 100%;
@@ -1101,8 +1197,42 @@ footer span{
     #Music i{
         font-size: 36px;
     }
+    .header-shrink{min-height: unset; height: 60px;}
+    #header-bar{align-items: center;}
+    #navbar{top: 60px;}
 
 }
+
+@media screen and (max-width: 500px){
+    #social-bar{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #icons{position: fixed; right: 10px; top: 30%;}
+    
+    .c1 h2{font-size: 24px !important;}
+    
+    header .c3{
+        position: fixed; left: 0px; top: 35%;
+        transform: rotateZ(180deg);
+    }
+    
+    header .c3 h2{
+        writing-mode: vertical-rl;
+        
+    }
+    
+/*    header .c1 h2 a{white-space: nowrap !important;}*/
+    
+    .album-info{font-size: 20px;}
+    .links{margin: 10px 0px;}
+    .links i{font-size: 32px;}
+    .links a{font-size: 16px; margin: 10px;}
+    .album-art{margin: 12px;}
+    
+    #Contact ul li{font-size: 18px;}
+}
+
 @media screen and (max-width: 400px){
     #navbar > ul > li a{
         padding: 15px 8px;
@@ -1112,12 +1242,15 @@ footer span{
     #About p{
         font-size: 16px;
     }
+      
 }
 
 @media screen and (max-width: 375px){
+/*
     .c1 > h2 > a{
         font-size: 14px;
     }
+*/
     
     #social-bar > li {
         margin: 5%;

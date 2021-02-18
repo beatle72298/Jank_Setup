@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	// grab the initial top offset of the navigation 
         var stickyNavTop = $('.navbar').offset().top;
+        var bgChangeTop = $('#Video').offset().top;
     
     // our function that decides weather the navigation bar should have 'fixed' css position or not.
         var stickyNav = function(){			    
@@ -21,10 +22,24 @@ $(document).ready(function(){
         }
     };
     stickyNav();
+    
+//    var bgChange = function(){
+//        var scrollTop = $(window).scrollTop();
+//        
+//        if (scrollTop > bgChangeTop){
+//            $('.main-bg').addClass('bgChange');
+//        } else {
+//            $('.main-bg').removeClass('bgChange')
+//        }
+//    };
+//    bgChange();
     // and run it again every time you scroll
     $(window).scroll(function() {
         stickyNav();
-})
+//        bgChange();
+});
+    
+
 
     
     //Down arrow scroll animation
@@ -135,6 +150,13 @@ $('.slick').slick({
     fade: true,
     infinite: true,
     dots: true,
+    responsive: [
+        {breakpoint: 500,
+        settings: {
+            arrows: false,
+            }
+        }
+    ]
 });
 
 $('.slick-2').slick({
