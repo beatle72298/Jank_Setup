@@ -156,7 +156,10 @@ i {
 /*--------------------------
 ---------HEADER-------------
 --------------------------*/
-
+.exclusion{
+    mix-blend-mode: color-dodge;
+    animation: text-color 1s linear infinite alternate;
+}
 
 #header-bar {
     z-index: 202;
@@ -165,7 +168,7 @@ i {
     position: fixed;
     top: 0;
     width: 100%;
-    text-shadow: 5px 2px 15px black;
+    
     transition: 0.2s all;
     margin: 0 auto;
     align-items: baseline;
@@ -182,6 +185,7 @@ header .c1{
     flex: 1 1 0%;
     text-align: center;
     z-index: 300;
+    
 }
 
 header .c2{

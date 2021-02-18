@@ -9,12 +9,14 @@ $(document).ready(function(){
 		         
             // if we've scrolled more than the navigation, change its position to fixed to stick to top,
             // otherwise change it back to relative
-            if (scrollTop > stickyNavTop - 100){ 
+            if (scrollTop > stickyNavTop - 100){
+                $('#header-bar').removeClass('exclusion');
                 $('.navbar').addClass('sticky');
                 $('#header-bar').css('padding', '0');
                 $('#header-bar').addClass('header-shrink');
                 $('#navbar').addClass('nav-shrink');
              } else {
+                 $('#header-bar').addClass('exclusion');
                 $('.navbar').removeClass('sticky');
                 $('#header-bar').css('padding', '1.5rem 2rem');
                 $('#header-bar').removeClass('header-shrink');
