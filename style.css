@@ -358,7 +358,7 @@ nav a.active {
     0%{background-color: purple;}
     20%{background-color: dodgerblue;}
     40%{background-color: forestgreen;}
-    60%{background-color: yellow;}
+    60%{background-color: goldenrod;}
     80%{background-color: orange;}
     100%{background-color: red;} 
 }
@@ -1277,4 +1277,37 @@ footer span{
 
 
 
+.coming-soon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
 
+.coming-soon h1{font-family: var(--display-1); font-size: 56px; mix-blend-mode: difference; margin-bottom: 0; text-shadow: 1px 3px 1px green;}
+
+.coming-soon h2{font-size: 32px; letter-spacing: 5px; margin-top: 0; background-color: black; padding: 10px 20px;}
+
+.coming-soon .main-bg{ height: 100%; top: 0;}
+
+.home-btn{
+    background-color: var(--color1);
+    padding: 20px 0px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    animation: text-color 15s linear infinite;
+    box-shadow: 1px 5px;
+    transition: .2s linear all;
+}
+
+.home-btn a{width: 100%; height: 100%;padding: 20px;}
+
+.home-btn:hover{
+    letter-spacing: 2px;
+    transition: .2s linear all;
+    background-color: goldenrod;
+    color: indigo !important;
+}
