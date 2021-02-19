@@ -475,6 +475,21 @@ nav a.active {
 */
 }
 
+.layer-3{
+    background-image: url(images/BandSpread1_NoBG.png);
+    filter: grayscale(1);
+    mix-blend-mode: luminosity;
+    height: inherit;
+    width: 100%;
+    z-index: 99999999999999;
+    position: absolute;
+/*
+    position: absolute;
+    bottom: 0;
+*/
+    top: 0;
+}
+
 /*
 .scene {
     transform: translateY(var(--translateY));
