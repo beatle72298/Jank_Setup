@@ -149,6 +149,7 @@ $(window).on('load', function() {
 
 $('.slick').slick({
     autoplay: true,
+    autoplaySpeed: 1000,
     fade: true,
     infinite: true,
     dots: true,
@@ -163,6 +164,7 @@ $('.slick').slick({
 
 $('.slick-2').slick({
     autoplay: true,
+    autoplaySpeed: 1000,
     fade: true,
     infinite: true,
     dots: true,

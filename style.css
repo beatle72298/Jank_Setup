@@ -203,7 +203,7 @@ i {
     justify-content: space-between;
     transition: 0.2s all;
     margin: 0;
-    align-items: baseline;
+    align-items: center;
 }
 
 #header-bar a:hover {
@@ -217,7 +217,14 @@ header .c1{
 /*    flex: 1 1 0%;*/
     text-align: center;
     z-index: 300;
-    
+}
+
+.header-logo{
+    background-image: url(images/logo-color.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 90px;
 }
 
 header .c2{
@@ -482,7 +489,7 @@ nav a.active {
 /*    mix-blend-mode: normal;*/
     height: inherit;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
 /*
     position: absolute;
