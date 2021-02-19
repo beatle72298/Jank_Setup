@@ -479,6 +479,7 @@ nav a.active {
     background-image: url(images/BandSpread1_NoBG.png);
     filter: grayscale(1);
     mix-blend-mode: luminosity;
+/*    mix-blend-mode: normal;*/
     height: inherit;
     width: 100%;
     z-index: 99999999999999;
