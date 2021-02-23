@@ -227,8 +227,9 @@ header .c1{
     background-image: url(images/logo-color.png);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 80px;
+    width: 90px;
     height: 90px;
+    
 }
 
 header .c2{
