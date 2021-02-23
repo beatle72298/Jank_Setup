@@ -18,8 +18,8 @@ audio {
     --display-2: 'Megrim';
     --display-3: 'Fascinate';
     --display-4: 'Almendra';
-    --display-5: 'Elsie Swash Caps';
-    --display-6: 'Srisakdi';
+    --display-5: 'Megrim';
+    --display-6: 'Space Grotesk';
     --p-1: 'Montserrat Alternates';
     --p-2: 'Poiret One';
     
@@ -31,7 +31,7 @@ audio {
     box-sizing: border-box;
 }
 
-html:focus, body:focus, .links a:focus{
+html:focus, body:focus, .links a:focus, .link:focus, .slick:focus{
     outline: none !important;
 }
 
@@ -44,6 +44,7 @@ body{
     margin:0;
     padding: 0;
     width:100%;
+    overflow: auto;
 /*    background-color: #00334A;*/
     color: aliceblue;
     font-family: var(--display-2);
@@ -111,20 +112,23 @@ i {
     position: absolute;
     z-index: -1;
     width: 100%;
-    display: inline-block;
+    display: grid;
     mix-blend-mode: difference;
 }
 
 #main-content{
-    height: 100%;
+    height: auto;
     display: block;
     width: 100%;
+    position: relative;
 }
 
 .site-wrapper{
     width: 100%;
     height: 100%;
-/*    display: inline-block;*/
+    display: inline-block;
+    position: relative;
+/*    padding: 60px 0px;*/
 /*    background-image: url(images/flora-bg.jpg);*/
 /*
     background-attachment: fixed;
@@ -152,7 +156,7 @@ i {
 .main-bg{
     background-image: url(images/flora-bg2.jpg);
     width: 100%;
-    height: 90%;
+    height: 100%;
     background-attachment: fixed;
     top: -5vh;
     position: relative;
@@ -165,7 +169,7 @@ i {
 .main-bg2{
     background-image: url(images/stars-bg.jpg);
     width: 100%;
-    height: 90%;
+    height: 100%;
     background-attachment: fixed;
     top: -5vh;
     position: relative;
@@ -450,7 +454,7 @@ nav a.active {
     animation-iteration-count: infinite;
 */
     opacity: .4;
-    background-image:url(images/flora-bg.jpg);
+    background-image:url(images/flora-bg2.jpg);
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -556,6 +560,7 @@ i#down-arrow.fas.fa-angle-double-down:hover {
     padding: 40px;
     margin: 10vh auto;
     border-radius: 10px;
+/*    max-height: 100vh;*/
 }
 
 .hero-email {
@@ -619,7 +624,8 @@ section h2 {
     width: 100%;
     font-size: 28px;
     text-align: left;
-    margin: : 0;
+    margin: 0;
+    font-family: var(--display-6);
 }
 
 .meta h2{font-size: 34px; text-decoration: underline; font-family: var(--display-5);}
@@ -637,6 +643,8 @@ section h2 {
     margin: 20px 20px;
     text-align: center;
     font-size: 24px;
+    font-family: var(--display-6);
+    line-height: 1.2;
 }
 
 .music-btn{
@@ -872,7 +880,7 @@ a.bit-button.bit-track-button.bit-offers:hover {
     
 }
 
-#Contact ul{font-family: var(--p-2); line-height: 2; font-size: 24px;}
+#Contact ul{font-family: var(--display-6); line-height: 2; font-size: 24px;}
 
 .fas.fa-envelope {
     margin-right: 5%;
@@ -900,10 +908,12 @@ a.bit-button.bit-track-button.bit-offers:hover {
     text-align: right;
     padding: 0px;
     margin: 0px;
+    
 }
+/*
 
 .modal-logo {
-    font-family: theZains;
+    font-family: ;
     text-align: center;
     font-size: 28px;
     margin: 0 0;
@@ -913,13 +923,14 @@ a.bit-button.bit-track-button.bit-offers:hover {
     margin-bottom: 30px;
     text-shadow: 5px 5px 10px black;
 }
+*/
 
 .artist-logo {
-    background-image: url(images/ArtistLogo_NoText.png);
+    background-image: url(images/logo-color.png);
     background-size: cover;
     background-position: center center;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     position: relative;
     left: 0px;
     text-align: center;
@@ -942,29 +953,31 @@ a.bit-button.bit-track-button.bit-offers:hover {
   height: 100%; /* Full height */
   overflow: hidden; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
   margin: 7% auto; /* 15% from the top and centered */
   border: 1px solid #888;
-  background-color: #00334A;
+  background-color: var(--color1);
   width: 50%; /* Could be more or less, depending on screen size */
+  height: 80%;
 }
 
 #mc_embed_signup{
     z-index: 51;
-    background:#00334A; 
+    background:var(--color1); 
 }
 
 /* The Close Button */
  .close {
   z-index: 55;
   color: #aaa;
-  font-size: 28px;
+  font-size: 56px;
   font-weight: bold;
   margin: 2%;
+
   
 }
 
@@ -981,7 +994,7 @@ a.bit-button.bit-track-button.bit-offers:hover {
 }
 
 .signup-caption p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--display-2);
     font-size: 18px;
     position: relative;
     left: 0;
@@ -989,22 +1002,33 @@ a.bit-button.bit-track-button.bit-offers:hover {
 }
 
 div.clear {
-    text-align: right;
+    text-align: center;
 }
 
 #mc-embedded-subscribe.button{
-    background-color: #1A607F;
-    font-family: 'Knewave', cursive;
-    transform: scale(1.5);
+    background-color: goldenrod;
+    font-family: var(--display-2);
     position: relative;
-    margin-top: 2%;
-    margin-bottom: 3%;
+    font-size: 24px;
+    padding: 10px 20px;
+    line-height: 1;
+/*    margin-right: 50px;*/
     box-shadow: 0px 2px 15px black;
+    margin: 20px auto;
+    transition: .2s linear all;
+    font-weight: 700;
+}
+
+#mc_embed_signup .button{
+    height: unset;
 }
 
 #mc-embedded-subscribe.button:hover {
-    background-color: black;
+    background-color: lawngreen;
+    color: indigo;
     box-shadow: 0px 2px 15px aliceblue;
+    transition: .2s linear all;
+    letter-spacing: 1px;
 }
 
 /*---------------------------------
@@ -1012,12 +1036,20 @@ div.clear {
 ---------------------------------*/
 
 footer {
-    height: 10vh;
+    height: 100px;
     background-color: var(--color1);
     padding: 20px 0px;
     width: 100%;
     display: block;
-    display: none;
+    margin-top: 53px;
+/*
+    position: absolute;
+    bottom: 0;
+    
+*/
+    
+    
+    
 /*
     position: absolute;
     bottom: 10px;
@@ -1184,6 +1216,15 @@ footer span{
     }
 */
     #About p{font-size: 18px;padding: 20px 0px;}
+    
+    .modal-content{
+        width: 100%;
+    }
+    
+    .modal-logo{font-size: 24px; margin-bottom: 0px;}
+    .signup-caption p{ font-size: 14px; margin-bottom: 0;}
+    #mc_embed_signup h2{margin: 0;}
+    
 }
 
 @media screen and (max-width: 600px){
