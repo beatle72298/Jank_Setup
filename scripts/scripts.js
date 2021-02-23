@@ -92,9 +92,9 @@ $('.down-arrow a').on('click', function() {
 
 $(window).scroll(function() {
     var windscroll = $(window).scrollTop();
-    if (windscroll >= 200) {
+    if (windscroll >= 1500) {
         $('.site-wrapper section').each(function(i) {
-            if ($(this).position().top <= windscroll - 450){
+            if ($(this).position().top <= windscroll - 1500){
                 $('nav a.active').removeClass('active');
                 $('nav a').eq(i).addClass('active');
             }
