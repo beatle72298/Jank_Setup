@@ -194,7 +194,7 @@ i {
 --------------------------*/
 .exclusion{
     mix-blend-mode: color-dodge;
-    animation: text-color 1s linear infinite alternate;
+/*    animation: text-color 1s linear infinite alternate;*/
 }
 
 #header-bar {
