@@ -157,6 +157,7 @@ $('.slick').slick({
         {breakpoint: 500,
         settings: {
             arrows: false,
+            pauseOnHover: false,
             }
         }
     ]
