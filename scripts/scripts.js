@@ -150,6 +150,7 @@ $(window).on('load', function() {
 $('.slick').slick({
     autoplay: true,
     autoplaySpeed: 1000,
+    speed: 500,
     fade: true,
     infinite: true,
     dots: true,
@@ -158,6 +159,8 @@ $('.slick').slick({
         settings: {
             arrows: false,
             pauseOnHover: false,
+            pauseOnFocus: false,
+            pauseOnDotsHover: true,
             }
         }
     ]
