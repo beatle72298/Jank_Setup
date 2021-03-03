@@ -1411,6 +1411,21 @@ footer span{
     }
     
     .links{margin-top: 0;}
+    
+    .album-info span{
+        font-size: 24px;
+        white-space: nowrap;
+        text-shadow: 1px 2px 10px black;
+    }
+    
+    .left-arrow, .right-arrow{
+/*        width: 80px;*/
+        float: unset;
+        display: inline-flex;
+        height: 150px;
+        justify-content: flex-end;
+    }
+    
       
 }
 
@@ -1428,6 +1443,22 @@ footer span{
     .nav-shrink > ul > li > a {
         padding: 10px 8px!important;
     }
+    
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    
+    
+    .left-arrow{
+        
+    }
+    
+    .left-arrow i, .right-arrow i{
+/*        display: inline;*/
+    }
+    
 }
 
 @media screen and (max-width: 335px){
@@ -1438,6 +1469,12 @@ footer span{
     #Contact ul li a{
         font-size: 80%;
     }
+    
+    .album-info span{
+        font-size: 24px;
+        white-space: wrap;
+    }
+    
 }
 
 
