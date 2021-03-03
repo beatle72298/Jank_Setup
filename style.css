@@ -1405,6 +1405,12 @@ footer span{
     
     .left-arrow, .right-arrow {display: flex;}
     .swipe{display: block;}
+    
+    .meta h2{
+        font-size: 28px;
+    }
+    
+    .links{margin-top: 0;}
       
 }
 
