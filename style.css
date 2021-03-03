@@ -669,6 +669,48 @@ section h2 {
     box-shadow: 3px 4px 10px black;
 }
 
+.swipe{
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 2px 10px black;
+    font-size: 14px;
+/*    margin-bottom: .5em;*/
+    position: relative;
+    top: -14px;
+    text-transform: capitalize;
+    display: none;
+}
+
+.swipe i{
+    font-size: 14px !important;
+}
+
+
+
+.left-arrow, .right-arrow{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.left-arrow i, .right-arrow i{
+    font-size: 72px !important;
+    text-shadow: 1px 2px 10px black;
+}
+
+.left-arrow{
+    float: left;
+}
+
+.right-arrow{
+    float: right;
+}
+
+
+
 #Music {
     text-align: center;
     height: 100%;
@@ -753,6 +795,8 @@ section h2 {
     text-shadow: 5px 2px 15px aliceblue;
     transition: 0.2s all;
 }
+
+
 
 
 /*---------------------------
@@ -1353,6 +1397,14 @@ footer span{
     #About p{
         font-size: 16px;
     }
+    
+    .album-art{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .left-arrow, .right-arrow {display: flex;}
+    .swipe{display: block;}
       
 }
 
