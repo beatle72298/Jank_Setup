@@ -756,6 +756,10 @@ section h2 {
     background-image: url(images/AlbumArt_InMotion.png);
 }
 
+#pos{
+    background-image: url(images/AlbumArt_PoS.jpg);
+}
+
 .card {
     box-shadow: 2px 4px 15px 0 black;
     padding: 10px;
