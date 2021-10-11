@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Jank Setup | Coming Soon</title>
+    <title>Jank Setup | Music</title>
     
     <link rel="canonical" href="https://janksetup.com">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Elsie+Swash+Caps:wght@400;900&family=Fascinate&family=Megrim&family=Montserrat+Alternates:wght@300;400;500;600;700&family=Poiret+One&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/50f757f527.js" crossorigin="anonymous"></script>
     <style>
@@ -26,7 +26,19 @@
 </head>
 
 <body>
-    <iframe src="https://linktr.ee/janksetup2" referrerpolicy="no-referrer"></iframe>
-</body>
+<!--    <iframe src="https://linktr.ee/janksetup2"></iframe>-->
+    <a id="redirect" href="https://linktr.ee/janksetup2" target="_parent">a</a>
 
+<script>
+    $(document).ready(function(){
+        //setTimeout(function(){
+            $('#redirect')[0].click();
+           // $('#redirect').trigger('click');
+            console.log('clicked?')
+        //}, 500);
+       
+        console.log('work plz');
+    });
+</script>    
+</body>
 </html>
